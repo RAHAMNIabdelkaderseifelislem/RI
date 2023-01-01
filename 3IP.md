@@ -57,3 +57,107 @@ we have the next network Address: 167.128.0.0/16 and we want to divide it into 4
 | 2           |167.128.64.0/18   | 167.128.64.1/18       | 167.128.127.254/18   |167.128.127.255/18  |
 | 3           |167.128.128.0/18   | 167.128.128.1/18       | 167.128.191.254/18   |167.128.191.255/18  |
 | 4           |167.128.192.0/18   | 167.128.192.1/18       | 167.128.255.254/18   |167.128.255.255/18  |
+
+### VLSM
+
+stands for Variable Length Subnet Masking. it's a technique that is used to divide the network into sub-networks. it's used to divide the network into sub-networks with different number of hosts. but it's not like the previous division
+
+## Private & Public IP Addresses
+
+the following table shows the private IP addresses:
+
+| Class | Range |
+|-------|-------|
+| A     | 10    |
+| B     | 172.16-172.31 |
+| C     | 192.168 |
+
+every adress that is not in the previous table is a public IP address.
+
+the use of private IP addresses is to avoid the use of public IP addresses. the use of public IP addresses is to connect to the Internet. the use of private IP addresses is to connect to the local network.
+
+# Network Address Translation (NAT)
+
+NAT is a technique that is used to translate the private IP addresses to public IP addresses. NAT is used to connect to the Internet. NAT is used to connect to the local network.
+there are 3 types of NAT:
+
+## Static NAT
+
+Static NAT is a technique that is used to translate the private IP addresses to public IP addresses. Static NAT is used to connect to the Internet. Static NAT is used to connect to the local network.
+to configure Static NAT we need to use the following commands:
+
+at the router:
+
+```bash
+Router(config)#interface FastEthernet 0/0
+Router(config-if)#ip address 192.168.1.1 255.255.255.0
+Router(config-if)#ip nat inside
+Router(config-if)#exit
+Router(config)#interface FastEthernet 0/1
+Router(config-if)#ip address 41.41.15.18 255.0.0.0
+Router(config-if)#ip nat outside
+Router(config-if)#exit
+Router(config)#ip nat inside source list 1 interface FastEthernet 0/1 overload
+Router(config)#access-list 1 permit
+```
+
+at the PC:
+
+```bash
+PC>ipconfig
+```
+
+## Dynamic NAT
+
+Dynamic NAT is a technique that is used to translate the private IP addresses to public IP addresses. Dynamic NAT is used to connect to the Internet. Dynamic NAT is used to connect to the local network.
+
+to configure Dynamic NAT we need to use the following commands:
+
+at the router:
+
+```bash
+Router(config)#interface FastEthernet 0/0
+Router(config-if)#ip address
+Router(config-if)#ip nat inside
+Router(config-if)#exit
+Router(config)#interface FastEthernet 0/1
+Router(config-if)#ip address
+Router(config-if)#ip nat outside
+Router(config-if)#exit
+Router(config)#ip nat inside source list 1 interface FastEthernet 0/1 overload
+Router(config)#access-list 1 permit
+```
+
+at the PC:
+
+```bash
+PC>ipconfig
+```
+
+## Overload NAT
+
+Overload NAT is a technique that is used to translate the private IP addresses to public IP addresses. Overload NAT is used to connect to the Internet. Overload NAT is used to connect to the local network.
+
+to configure Overload NAT we need to use the following commands:
+
+at the router:
+
+```bash
+Router(config)#interface FastEthernet 0/0
+Router(config-if)#ip address
+Router(config-if)#ip nat inside
+Router(config-if)#exit
+Router(config)#interface FastEthernet 0/1
+Router(config-if)#ip address
+Router(config-if)#ip nat outside
+Router(config-if)#exit
+Router(config)#ip nat inside source list 1 interface FastEthernet 0/1 overload
+Router(config)#access-list 1 permit
+```
+
+at the PC:
+
+```bash
+PC>ipconfig
+```
+
