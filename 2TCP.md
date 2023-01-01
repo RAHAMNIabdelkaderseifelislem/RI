@@ -2,7 +2,7 @@
 
 stands for Open Systems Interconnection model. it's a model that is used to describe how the data is sent between devices.
 
-# Layers
+## Layers
 
 there are 7 layers in the OSI model:
 
@@ -60,3 +60,30 @@ is the layer that is used to send the data from one device to another. the data 
 ## Application Layer
 
 is the layer that is used to send the data from one device to another. the data are processed in applications form in this layer.
+
+# TCP/IP model
+
+stands for Transmission Control Protocol/Internet Protocol model. it's a model that is used to describe how the data is sent between devices.
+
+## Layers
+
+there are 4 layers in the TCP/IP model:
+
+### Application Layer
+
+is the layer that is used to send the data from one device to another. the data are processed in applications form in this layer.
+applications that are used in this layer are: HTTP, FTP, SMTP, DNS.
+
+### Transport Layer
+
+is the layer that is used to send the data from one device to another. the data are processed in segments form in this layer.
+protocols that are used in this layer are: TCP, UDP.
+
+### Internet Layer
+
+is the layer that is used to send the data from one device to another. the data are processed in packets form in this layer.
+
+### Network Access Layer
+
+is the layer that is used to send the data from one device to another. the data are processed in bits form in this layer.
+devices that are used in this layer are: hubs, repeaters, bridges, switches.
